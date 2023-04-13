@@ -7,5 +7,5 @@ avg_save:
 	git push
 
 run:
-	pgc++ main.cpp -fast -acc=gpu -O2 -o	main_gpu -Mcudalib=cublas
+	pgc++ main.cpp -fast -acc=gpu -O2 -o main_gpu -Mcudalib=cublas
 	nsys profile -t openacc,cublas,nvtx ./main_gpu -s 512 -i 100
