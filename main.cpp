@@ -57,11 +57,6 @@ void initialize_array(T *A, int size) {
     A[IDX2C(i, size - 1, size)] =
         A[IDX2C(0, size - 1, size)] + addend; // vertical
   }
-
-  //Заполнение 20-ю, чтобы сократить количество операций в основном алгоритме
-  for (int i = 1; i < size - 1; ++i)
-    for (int j = 1; j < size - 1; ++j)
-      A[IDX2C(i, j, size)] = 20.0;
 }
 
 // Основной алгоритм
