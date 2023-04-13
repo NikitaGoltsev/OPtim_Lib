@@ -158,7 +158,7 @@ void calculate(int net_size = 128, int iter_max = 1e6, T accuracy = 1e-6,
 
 int main(int argc, char *argv[]) {
   auto begin_main = std::chrono::steady_clock::now();
-  int net_size = 1024, iter_max = (int)1e6;
+  int net_size = 128, iter_max = (int)1e6;
   T accuracy = 1e-6;
   bool res = false;
   for (int arg = 1; arg < argc; arg++) {
