@@ -74,6 +74,8 @@ void calculate(int net_size = 128, int iter_max = 1e6, T accuracy = 1e-6,
   // Инициализация матриц
   initialize_array(A, net_size);
   initialize_array(Anew, net_size);
+  // !!! Добавить вывод в начале
+
   // Текущая ошибка
   T error = 0;
   // Счетчик итераций
@@ -149,6 +151,8 @@ void calculate(int net_size = 128, int iter_max = 1e6, T accuracy = 1e-6,
     print_array(Anew, net_size);
   }
   std::cout << "iter=" << iter << ",\terror=" << error << std::endl;
+  // Вывод в конце
+  
 
   cublasDestroy(handle);
 #pragma acc exit data delete (A[:vec_size], Anew[:vec_size], error)
@@ -158,7 +162,7 @@ void calculate(int net_size = 128, int iter_max = 1e6, T accuracy = 1e-6,
 
 int main(int argc, char *argv[]) {
   auto begin_main = std::chrono::steady_clock::now();
-  int net_size = 512, iter_max = (int)1e6;
+  int net_size = 15, iter_max = (int)1e6;
   T accuracy = 1e-6;
   bool res = false;
   for (int arg = 1; arg < argc; arg++) {
